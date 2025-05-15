@@ -1,8 +1,8 @@
 # SimpleStorage Smart Contract
 
-A robust Ethereum smart contract for storing, retrieving, and managing favorite numbers associated with individuals.
+A robust Ethereum smart contract for storing, retrieving, and managing favourite numbers associated with individuals.
 
-![SimpleStorage Banner](https://via.placeholder.com/800x200/0a192f/ffffff?text=SimpleStorage+Smart+Contract)
+
 
 ## Table of Contents
 
@@ -19,17 +19,17 @@ A robust Ethereum smart contract for storing, retrieving, and managing favorite 
 
 ## Overview
 
-SimpleStorage is a foundational smart contract that demonstrates core Ethereum development concepts while providing practical utility for data storage on the blockchain. The contract maintains a registry of people and their associated favorite numbers with efficient lookup capabilities.
+SimpleStorage is a foundational smart contract that demonstrates core Ethereum development concepts while providing practical utility for data storage on the blockchain. The contract maintains a registry of people and their associated favourite numbers with efficient lookup capabilities.
 
 ## Features
 
-- ✅ Store and retrieve individual favorite numbers
-- ✅ Register people with their names and favorite numbers
+- ✅ Store and retrieve individual favourite numbers
+- ✅ Register people with their names and favourite numbers
 - ✅ Efficient name-based lookups via mapping
 - ✅ Access controls for administrative functions
 - ✅ Comprehensive event logging for all state changes
 - ✅ Input validation to prevent errors
-- ✅ Optimized for gas efficiency
+- ✅ Optimised for gas efficiency
 
 ## Contract Architecture
 
@@ -39,7 +39,7 @@ SimpleStorage is a foundational smart contract that demonstrates core Ethereum d
 
 ```solidity
 uint256 private myFavoriteNumber;
-address public owner;
+address the public owner;
 ```
 
 The contract maintains a primary `myFavoriteNumber` value and an owner address for access control.
@@ -79,7 +79,7 @@ Events provide transparency and allow off-chain applications to track contract a
 function store(uint256 _favoriteNumber) public
 ```
 
-Stores a new favorite number in the contract's primary variable.
+Stores a new favourite number in the contract's primary variable.
 - Emits `FavoriteNumberUpdated` when the value changes
 - No access restrictions - any address can call this function
 
@@ -89,7 +89,7 @@ Stores a new favorite number in the contract's primary variable.
 function retrieve() public view returns (uint256)
 ```
 
-Retrieves the currently stored favorite number.
+Retrieves the currently stored favourite number.
 - Read-only (view) function that doesn't modify state
 - Returns the current value of `myFavoriteNumber`
 
@@ -99,7 +99,7 @@ Retrieves the currently stored favorite number.
 function addPerson(string memory _name, uint256 _favoriteNumber) public
 ```
 
-Registers a new person with their name and favorite number.
+Registers a new person with their name and favourite number.
 - Validates that the name is not empty
 - Updates both the array and mapping simultaneously
 - Emits `PersonAdded` event with the person's details and array position
@@ -120,7 +120,7 @@ Returns the total number of people registered in the contract.
 function getPersonFavoriteNumber(string memory _name) public view returns (uint256 favoriteNumber, bool found)
 ```
 
-Looks up a person's favorite number by name.
+Looks up a person's favourite number by name.
 - Returns both the number and a boolean indicating if the person was found
 - Prevents confusion between zero values and non-existent entries
 
@@ -130,9 +130,9 @@ Looks up a person's favorite number by name.
 function updatePersonFavoriteNumber(string memory _name, uint256 _newFavoriteNumber) public returns (bool success)
 ```
 
-Updates an existing person's favorite number.
+Updates an existing person's favourite number.
 - Searches for the person in the array by comparing name hashes
-- Updates both array and mapping if found
+- Updates both the array and the mapping if found
 - Returns a boolean indicating success or failure
 
 #### `clearAllPeople()`
@@ -152,13 +152,13 @@ Administrative function to reset the people registry.
 SimpleStorage provides a foundation for storing user preferences on-chain:
 - Dapp user settings storage
 - User configuration management
-- Personal customization parameters
+- Personal customisation parameters
 
 ### 2. Basic Identity Registry
 
 With minor extensions, the contract could serve as:
-- Member registry for DAOs
-- User profile foundation for decentralized applications
+- Member registry for DAOS
+- User profile foundation for decentralised applications
 - Participant tracking for blockchain-based events
 
 ### 3. Survey and Polling Tool
@@ -166,7 +166,7 @@ With minor extensions, the contract could serve as:
 The number storage capability enables:
 - Simple polling mechanisms
 - Rating collection systems
-- Basic survey tools where each person submits a numerical response
+- Basic survey tools, where each person submits a numerical response
 
 ### 4. Verification Systems
 
@@ -202,7 +202,7 @@ As demonstrated in its current form:
 // Web3.js example
 const contract = new web3.eth.Contract(ABI, CONTRACT_ADDRESS);
 
-// Store a favorite number
+// Store a favourite number
 await contract.methods.store(42).send({ from: userAddress });
 
 // Add a person
